@@ -60,7 +60,7 @@ resource "null_resource" "cloud_init_config_files" {
   }
 }
 
-resource "proxmox_vm_qemu" "cloudinit-vm" {
+resource "proxmox_vm_qemu" "cloudinit_vm" {
   name        = var.name
   target_node = var.proxmox_target_node
 
@@ -99,6 +99,6 @@ resource "proxmox_vm_qemu" "cloudinit-vm" {
   ]
 
   lifecycle {
-      ignore_changes = [ipconfig0]
+    ignore_changes = [ipconfig0]
   }
 }
