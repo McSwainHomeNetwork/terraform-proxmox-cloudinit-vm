@@ -47,6 +47,10 @@ resource "local_file" "cloud_init_user_data_file" {
 }
 
 resource "null_resource" "cloud_init_config_files" {
+  triggers = {
+    refresh_on = var.cloud_init
+  }
+
   connection {
     type     = "ssh"
     user     = var.pve_user
